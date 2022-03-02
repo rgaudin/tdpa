@@ -19,6 +19,7 @@ jobs:
             GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
             DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          registries: docker.io ghcr.io
           context: test-a
           on-master: dev
           restrict-to: rgaudin/tdpa
@@ -35,6 +36,7 @@ jobs:
           credentials: |
             DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          registries: docker.io
           context: test-a
           on-master: dev
           restrict-to: rgaudin/tdpa
@@ -51,6 +53,7 @@ jobs:
           credentials: |
             DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          registries: docker.io
           context: test-a
           on-master: dev
           restrict-to: rgaudin/tdpa
@@ -68,14 +71,15 @@ jobs:
           credentials: |
             DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          registries: docker.io
           context: test-a
           on-master: dev
           restrict-to: rgaudin/tdpa
           repo_description: ""
           repo_overview: "file:../LICENSE"
 
-
   test-5:
+    registries: docker.io
     # auto without a context README
     runs-on: ubuntu-20.04
     steps:
@@ -86,6 +90,7 @@ jobs:
           credentials: |
             DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          registries: docker.io
           context: test-b
           on-master: dev
           restrict-to: rgaudin/tdpa
@@ -103,6 +108,7 @@ jobs:
           credentials: |
             DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          registries: docker.io
           context: test-c
           on-master: dev
           restrict-to: rgaudin/tdpa
@@ -120,6 +126,7 @@ jobs:
           credentials: |
             DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          registries: docker.io
           context: test-d
           on-master: dev
           restrict-to: rgaudin/tdpa
