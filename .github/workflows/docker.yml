@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: openzim/docker-publish-action@readme
+      - uses: openzim/docker-publish-action@v8-alpha
         with:
           image-name: rgaudin/test-1
           credentials: |
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: openzim/docker-publish-action@readme
+      - uses: openzim/docker-publish-action@v8-alpha
         with:
           image-name: rgaudin/test-2
           credentials: |
@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: openzim/docker-publish-action@readme
+      - uses: openzim/docker-publish-action@v8-alpha
         with:
           image-name: rgaudin/test-3
           credentials: |
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: openzim/docker-publish-action@readme
+      - uses: openzim/docker-publish-action@v8-alpha
         with:
           image-name: rgaudin/test-4
           credentials: |
@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: openzim/docker-publish-action@readme
+      - uses: openzim/docker-publish-action@v8-alpha
         with:
           image-name: rgaudin/test-5
           credentials: |
@@ -97,7 +97,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: openzim/docker-publish-action@readme
+      - uses: openzim/docker-publish-action@v8-alpha
         with:
           image-name: rgaudin/test-6
           credentials: |
@@ -114,7 +114,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: openzim/docker-publish-action@readme
+      - uses: openzim/docker-publish-action@v8-alpha
         with:
           image-name: rgaudin/test-7
           credentials: |
