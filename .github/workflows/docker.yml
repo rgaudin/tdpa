@@ -79,7 +79,6 @@ jobs:
           repo_overview: "file:../LICENSE"
 
   test-5:
-    registries: docker.io
     # auto without a context README
     runs-on: ubuntu-20.04
     steps:
