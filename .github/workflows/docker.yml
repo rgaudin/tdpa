@@ -1,0 +1,127 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  test-1:
+    # only description, pushing to both registries
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: openzim/docker-publish-action@readme
+        with:
+          image-name: rgaudin/test-1
+          credentials: |
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          context: test-a
+          on-master: dev
+          restrict-to: rgaudin/tdpa
+          repo_description: "Test A description"
+
+  test-2:
+    # static text for both
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: openzim/docker-publish-action@readme
+        with:
+          image-name: rgaudin/test-2
+          credentials: |
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          context: test-a
+          on-master: dev
+          restrict-to: rgaudin/tdpa
+          repo_description: "Test A description"
+          repo_overview: "This is an **overview**"
+
+  test-3:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: openzim/docker-publish-action@readme
+        with:
+          image-name: rgaudin/test-3
+          credentials: |
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          context: test-a
+          on-master: dev
+          restrict-to: rgaudin/tdpa
+          repo_description: "auto"
+          repo_overview: "auto"
+
+  test-4:
+    # using file:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: openzim/docker-publish-action@readme
+        with:
+          image-name: rgaudin/test-4
+          credentials: |
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          context: test-a
+          on-master: dev
+          restrict-to: rgaudin/tdpa
+          repo_description: ""
+          repo_overview: "file:../LICENSE"
+
+
+  test-5:
+    # auto without a context README
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: openzim/docker-publish-action@readme
+        with:
+          image-name: rgaudin/test-5
+          credentials: |
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          context: test-b
+          on-master: dev
+          restrict-to: rgaudin/tdpa
+          repo_description: "auto"
+          repo_overview: "auto"
+
+  test-6:
+    # auto without an RST README
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: openzim/docker-publish-action@readme
+        with:
+          image-name: rgaudin/test-6
+          credentials: |
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          context: test-c
+          on-master: dev
+          restrict-to: rgaudin/tdpa
+          repo_description: "auto"
+          repo_overview: "auto"
+
+  test-7:
+    # auto without an md README without extension
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: openzim/docker-publish-action@readme
+        with:
+          image-name: rgaudin/test-7
+          credentials: |
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+          context: test-d
+          on-master: dev
+          restrict-to: rgaudin/tdpa
+          repo_description: "auto"
+          repo_overview: "auto"
